@@ -18,6 +18,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
   <title>edugames</title>
 </head>
 
@@ -39,132 +46,141 @@
   </nav>
   <div class="container">
     <h1>Welcome!</h1>
-    <image src="/Animations/FairyWave.gif" width="200">
-      <image src="/Images/Black_character.png" width="150">
+    <div style="display: flex;">
+      <div>
+        <image src="/Animations/FairyWave.gif" width="200">
+      </div>
+      <div style="padding: 5px;">
+        <p style="font-size: x-large">Choose a game from either the map or the category section below.</p>
+      </div>
+    </div>
+    <!-- <image src="/Images/Black_character.png" width="150"> -->
+    <p>&nbsp;</p>
+    <h1>Games by Map Location</h1>
+    <div id="map"></div>
 
-        <p>&nbsp;</p>
-
-
-        <h2>Vocabulary games</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MC001/index.html"
-                target="_blank">
-                <img src="/Thumbnails/MC001.JPG" style="width:100%">
-                <div class="caption">
-                  <p>Multiple Choice Vocab Game</p>
-                </div>
-              </a>
+    <p>&nbsp;</p>
+    <h1>Games by Category</h1>
+    <h2>Vocabulary games</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MC001/index.html"
+            target="_blank">
+            <img src="/Thumbnails/MC001.JPG" style="width:100%">
+            <div class="caption">
+              <p>Multiple Choice Vocab Game</p>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MC002/index.html"
-                target="_blank">
-                <img src="/Thumbnails/MC002.JPG" style="width:100%">
-                <div class="caption">
-                  <p>Multiple Choice Vocab Game</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MC003/index.html"
-                target="_blank">
-                <img src="/Thumbnails/MC003.JPG" style="width:100%">
-                <div class="caption">
-                  <p>Multiple Choice Vocab Game</p>
-                </div>
-              </a>
-            </div>
-          </div>
+          </a>
         </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MC004/index.html"
-                target="_blank">
-                <img src="/Thumbnails/MC004.JPG" style="width:100%">
-                <div class="caption">
-                  <p>Multiple Choice Vocab Game</p>
-                </div>
-              </a>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MC002/index.html"
+            target="_blank">
+            <img src="/Thumbnails/MC002.JPG" style="width:100%">
+            <div class="caption">
+              <p>Multiple Choice Vocab Game</p>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="#" target="_blank">
-                <img src="" style="width:100%">
-                <div class="caption">
-                  <p></p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="#" target="_blank">
-                <img src="" style="width:100%">
-                <div class="caption">
-                  <p></p>
-                </div>
-              </a>
-            </div>
-          </div>
+          </a>
         </div>
-
-        <h2>Spelling games</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/SpellingBee/index.html"
-                target="_blank">
-                <img src="/Thumbnails/SpellingBee.JPG" style="width:100%">
-                <div class="caption">
-                  <p>Spelling Bee Game</p>
-                </div>
-              </a>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MC003/index.html"
+            target="_blank">
+            <img src="/Thumbnails/MC003.JPG" style="width:100%">
+            <div class="caption">
+              <p>Multiple Choice Vocab Game</p>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/DragAndDropSpelling/index.html"
-                target="_blank">
-                <img src="/Thumbnails/SpellingDragAndDrop.JPG" style="width:100%">
-                <div class="caption">
-                  <p>Spelling Game</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="#" target="_blank">
-                <img src="" style="width:100%">
-                <div class="caption">
-                  <p></p>
-                </div>
-              </a>
-            </div>
-          </div>
+          </a>
         </div>
-
-        <h2>Adventure games</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/ArtemisPlatformer/index.html"
-                target="_blank">
-                <img src="/Animations/ArtemisPlatformer.gif" style="width:100%">
-                <div class="caption">
-                  <p>Platformer</p>
-                </div>
-              </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MC004/index.html"
+            target="_blank">
+            <img src="/Thumbnails/MC004.JPG" style="width:100%">
+            <div class="caption">
+              <p>Multiple Choice Vocab Game</p>
             </div>
-          </div>
-          <!-- <div class="col-md-4">
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="#" target="_blank">
+            <img src="" style="width:100%">
+            <div class="caption">
+              <p></p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="#" target="_blank">
+            <img src="" style="width:100%">
+            <div class="caption">
+              <p></p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <h2>Spelling games</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/SpellingBee/index.html"
+            target="_blank">
+            <img src="/Thumbnails/SpellingBee.JPG" style="width:100%">
+            <div class="caption">
+              <p>Spelling Bee Game</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/DragAndDropSpelling/index.html"
+            target="_blank">
+            <img src="/Thumbnails/SpellingDragAndDrop.JPG" style="width:100%">
+            <div class="caption">
+              <p>Spelling Game</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="#" target="_blank">
+            <img src="" style="width:100%">
+            <div class="caption">
+              <p></p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <h2>Adventure games</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/ArtemisPlatformer/index.html"
+            target="_blank">
+            <img src="/Animations/ArtemisPlatformer.gif" style="width:100%">
+            <div class="caption">
+              <p>Platformer</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- <div class="col-md-4">
             <div class="thumbnail">
               <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/Adventure001/index.html" target="_blank">
                 <img src="Assets/Thumbnails/ADV001.JPG" style="width:100%">
@@ -174,52 +190,84 @@
               </a>
             </div>
           </div> -->
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/ChaseGame/index.html"
-                target="_blank">
-                <img src="/Animations/ChaseGame.gif" style="width:100%">
-                <div class="caption">
-                  <p>Chase</p>
-                </div>
-              </a>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/ChaseGame/index.html"
+            target="_blank">
+            <img src="/Animations/ChaseGame.gif" style="width:100%">
+            <div class="caption">
+              <p>Chase</p>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="#" target="_blank">
-                <img src="" style="width:100%">
-                <div class="caption">
-                  <p></p>
-                </div>
-              </a>
-            </div>
-          </div>
+          </a>
         </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="#" target="_blank">
+            <img src="" style="width:100%">
+            <div class="caption">
+              <p></p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
 
-        <h2>Map</h2>
-        <div class="row">
-          <canvas id="canvas" width="200" height="100"></canvas>
-        </div>
+
   </div>
 
   <script>
-    var canvas = document.getElementById("canvas"),
-      ctx = canvas.getContext("2d");
+    var map = L.map('map', {
+      crs: L.CRS.Simple,
+    });
 
-    canvas.width = 903;
-    canvas.height = 657;
+    var bounds = [[0, 0], [1000, 1000]];
+    var image = L.imageOverlay('/Images/maps/map.jpg', bounds).addTo(map);
+    map.fitBounds(bounds);
+
+    // Forest
+    var forest = L.latLng([550, 200]);
+    L.marker(forest).addTo(map);
+    L.marker(forest).addTo(map).bindPopup('<a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MC002/index.html" target="_blank">The Forest</a>');
+
+    // Town
+    var town = L.latLng([670, 520]);
+    L.marker(town).addTo(map);
+    L.marker(town).addTo(map).bindPopup('<a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MC001/index.html" target="_blank">Town</a>');
+
+    // The Temple
+    var town = L.latLng([720, 920]);
+    L.marker(town).addTo(map);
+    L.marker(town).addTo(map).bindPopup('<a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MC004/index.html" target="_blank">The Temple</a>');
+
+    // Academy
+    var academy = L.latLng([900, 520]);
+    L.marker(academy).addTo(map);
+    L.marker(academy).addTo(map).bindPopup('<a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/SpellingBee/index.html" target="_blank">The Academy</a>');
+
+    // Mountain
+    var mountain = L.latLng([800, 520]);
+    L.marker(mountain).addTo(map);
+    L.marker(mountain).addTo(map).bindPopup(`
+              <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/ArtemisPlatformer/index.html"
+                target="_blank">               
+                  <p>The Mountain</p>              
+              </a>`);
+
+    // Academy
+    var river = L.latLng([230, 120]);
+    L.marker(river).addTo(map);
+    L.marker(river).addTo(map).bindPopup(` 
+              <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/ChaseGame/index.html"
+                target="_blank">            
+                  <p>The River</p>               
+              </a>`);
 
 
-    var background = new Image();
-    background.src = "/Images/maps/map.jpg";
-
-    // Make sure the image is loaded first otherwise nothing will draw.
-    background.onload = function () {
-      ctx.drawImage(background, 0, 0);
-    }
-
-// Draw whatever else over top of it on the canvas.
+    // Pirate Cove
+    var pirateCove = L.latLng([100, 620]);
+    L.marker(pirateCove).addTo(map);
+    L.marker(pirateCove).addTo(map).bindPopup('<a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/DragAndDropSpelling/index.html" target="_blank">The Academy</a>');
   </script>
 
   <!-- Optional JavaScript; choose one of the two! -->
