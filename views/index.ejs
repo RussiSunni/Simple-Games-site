@@ -54,10 +54,10 @@
         <p style="font-size: x-large">Choose a game from either the map or the category section below.</p>
       </div>
     </div>
-    <!-- <image src="/Images/Black_character.png" width="150"> -->
     <p>&nbsp;</p>
     <h1>Games by Map Location</h1>
-    <div id="map"></div>
+    <iframe src="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MapScreen/index.html" width="660"
+      height="660"></iframe>
 
     <p>&nbsp;</p>
     <h1>Games by Category</h1>
@@ -215,61 +215,6 @@
 
 
   </div>
-
-  <script>
-    var map = L.map('map', {
-      crs: L.CRS.Simple,
-    });
-
-    var bounds = [[0, 0], [1000, 1000]];
-    var image = L.imageOverlay('/Images/maps/map.jpg', bounds).addTo(map);
-    map.fitBounds(bounds);
-
-    // Forest
-    var forest = L.latLng([550, 200]);
-    L.marker(forest).addTo(map);
-    L.marker(forest).addTo(map).bindPopup('<a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MC002/index.html" target="_blank">The Forest</a>');
-
-    // Town
-    var town = L.latLng([670, 520]);
-    L.marker(town).addTo(map);
-    L.marker(town).addTo(map).bindPopup('<a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MC001/index.html" target="_blank">Town</a>');
-
-    // The Temple
-    var town = L.latLng([720, 920]);
-    L.marker(town).addTo(map);
-    L.marker(town).addTo(map).bindPopup('<a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/MC004/index.html" target="_blank">The Temple</a>');
-
-    // Academy
-    var academy = L.latLng([900, 520]);
-    L.marker(academy).addTo(map);
-    L.marker(academy).addTo(map).bindPopup('<a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/SpellingBee/index.html" target="_blank">The Academy</a>');
-
-    // Mountain
-    var mountain = L.latLng([800, 520]);
-    L.marker(mountain).addTo(map);
-    L.marker(mountain).addTo(map).bindPopup(`
-              <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/ArtemisPlatformer/index.html"
-                target="_blank">               
-                  <p>The Mountain</p>              
-              </a>`);
-
-    // Academy
-    var river = L.latLng([230, 120]);
-    L.marker(river).addTo(map);
-    L.marker(river).addTo(map).bindPopup(` 
-              <a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/ChaseGame/index.html"
-                target="_blank">            
-                  <p>The River</p>               
-              </a>`);
-
-
-    // Pirate Cove
-    var pirateCove = L.latLng([100, 620]);
-    L.marker(pirateCove).addTo(map);
-    L.marker(pirateCove).addTo(map).bindPopup('<a href="https://sunshine-english-school-actvities.s3.af-south-1.amazonaws.com/DragAndDropSpelling/index.html" target="_blank">The Academy</a>');
-  </script>
-
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
